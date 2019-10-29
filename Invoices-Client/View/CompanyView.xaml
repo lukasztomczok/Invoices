@@ -4,9 +4,40 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Invoices_Client.View"
+             xmlns:sf="http://schemas.syncfusion.com/wpf"
+             xmlns:skin="clr-namespace:Syncfusion.SfSkinManager;assembly=Syncfusion.SfSkinManager.WPF"
+             xmlns:vm="clr-namespace:Invoices_Client.ViewModel"
+             skin:SfSkinManager.VisualStyle="Office2010Blue"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Loaded="Grid_Loaded" LostFocus="Grid_LostFocus" Unloaded="Grid_Unloaded">
-        <TextBlock Text="Company"/>
+             d:DesignHeight="450" d:DesignWidth="800"
+             sf:DocumentContainer.Header="Dane zakładu">
+    <UserControl.DataContext>
+        <vm:CompanyViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <sf:ToolBarAdv Margin="3">
+            <sf:ButtonAdv Label="Popraw" SmallIcon="/Image/icons8-edit-file-16.png"/>
+        </sf:ToolBarAdv>
+        <GroupBox Header="Dane firmy" Grid.Row="1" Margin="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Content="Nazwa skrócona:" HorizontalAlignment="Right" Margin="3"/>
+                <TextBlock Text="{Binding Company.ShortName}" FontSize="14" FontWeight="Bold" Grid.Column="1" Margin="3" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="Nazwa:" Grid.Row="1" HorizontalAlignment="Right" Margin="3"/>
+                <TextBlock Text="{Binding Company.Name}" FontSize="14" FontWeight="Bold" Grid.Row="1" Grid.Column="1" Margin="3" VerticalAlignment="Center"/>
+            </Grid>
+        </GroupBox>
     </Grid>
 </UserControl>

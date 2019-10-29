@@ -7,4 +7,23 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Image\icons8-add-new-16.png" />
+    <None Remove="Image\icons8-edit-file-16.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.Shared.WPF" Version="17.3.0.19" />
+    <PackageReference Include="Syncfusion.Themes.Office2010Blue.WPF" Version="17.3.0.19" />
+    <PackageReference Include="Syncfusion.Themes.SystemTheme.WPF" Version="17.3.0.19" />
+    <PackageReference Include="Syncfusion.Tools.WPF" Version="17.3.0.19" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Image\icons8-add-new-16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\icons8-edit-file-16.png" />
+  </ItemGroup>
+
 </Project>

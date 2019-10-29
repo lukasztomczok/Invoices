@@ -8,6 +8,23 @@ namespace Invoices_Client.Repository
 {
     public class CompanyRepository
     {
-        public Company Company { get; set; }
+        private Company company;
+        public Company Company
+        {
+            get
+            {
+                if (company == null)
+                {
+
+
+                    company = new Company()
+                    {
+                        ShortName = "SzWG",
+                        Name = "Szpital Wielospecjalistyczny w Gliwicach"
+                    };
+                }
+                return company;
+            }
+        }
     }
 }

@@ -27,25 +27,29 @@ namespace Invoices_Client
 
         private void companyMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            DoForm(typeof(View.CompanyView), FormType.Window);
+            DoForm(typeof(View.CompanyView), FormType.Control);
         }
 
         private void DoForm(Type form, FormType type)
         {
-            var f = Activator.CreateInstance(form);
+            Mouse.OverrideCursor = Cursors.Wait;
+            UserControl f = Activator.CreateInstance(form) as UserControl;
             switch (type)
             {
-                case FormType.Window:
+                case FormType.Window:                    
                     Window window = new Window();
                     window.Owner = this;
                     window.Content = f;
+                    window.Title= Syncfusion.Windows.Tools.Controls.DocumentContainer.GetHeader(f).ToString();
                     window.Show();
                     break;
                 case FormType.Control:
+                    this.screen.Items.Add(f);
                     break;
                 default:
                     break;
             }
+            Mouse.OverrideCursor = null;
         }
     }
 }

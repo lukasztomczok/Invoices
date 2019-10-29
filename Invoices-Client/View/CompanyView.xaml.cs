@@ -37,5 +37,10 @@ namespace Invoices_Client.View
         {
             MessageBox.Show("Unloaded");
         }
+
+        private void UserControl_GotFocus(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Got focus");
+        }
     }
 }

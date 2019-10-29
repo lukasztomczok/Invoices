@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +13,10 @@ namespace Invoices_Client
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTYzNDE3QDMxMzcyZTMzMmUzME0wdnZ3TmVQajVzVU56bXZwTXBlRGgwTmhMNHlrODY3a25RNDdDVFpzUDg9");
+            Syncfusion.SfSkinManager.SfSkinManager.ApplyStylesOnApplication = true;
+        }
     }
 }

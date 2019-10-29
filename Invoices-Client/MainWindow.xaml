@@ -4,6 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Invoices_Client"
+        xmlns:skin="clr-namespace:Syncfusion.SfSkinManager;assembly=Syncfusion.SfSkinManager.WPF"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        skin:SfSkinManager.VisualStyle="Office2010Blue"
         mc:Ignorable="d" Height="450" Width="800"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
@@ -19,7 +22,7 @@
                 <MenuItem Header="Dane firmy" Name="companyMenuItem" Click="companyMenuItem_Click"/>
             </MenuItem>
         </Menu>
-        <ContentControl Name="contentControl" Grid.Row="1"/>
+        <syncfusion:DocumentContainer Name="screen" Grid.Row="1" Mode="TDI" Margin="3"/>
         <StatusBar Grid.Row="2">
             <StatusBarItem Content="User:"/>
         </StatusBar>
